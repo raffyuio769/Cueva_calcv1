@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         String rightStr= oldStr.substring(cursorPos);
         if (getString(R.string.display).equals(display.getText().toString())) {
             display.setText(strToAdd);
+            display.setSelection(cursorPos + 1);
         }
         else {
             display.setText(String.format("%s%s%s", leftStr, strToAdd, rightStr));
@@ -134,8 +135,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void parenthesesBTN (View view){
+        int cursorPos = display.getSelectionStart();
+        int openPar = 0;
+        int closedPar = 0;
+        int textLen = display.getText().length();
+
+        for (int i = 0; i < closedPar; i++){
+            if (display.getText().toString().substring(i, i+1).equals("(")){
+                openPar += 1;
+            }
+            if (display.getText().toString().substring(i, i+1).equals(")")){
+                closedPar += 1;
+            }
+        }
+        if (openPar == closedPar || display.getText().toString().substring(textLen-1, textLen).equals("(")){
+            updateText("(");
+        }
+        if (closedPar < openPar && !display.getText().toString().substring(textLen-1, textLen).equals(")")){
+            updateText(")");
+        }
+        display.setSelection(cursorPos + 1);
 
     }
-
-
 }
