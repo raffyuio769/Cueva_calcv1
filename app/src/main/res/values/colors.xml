@@ -9,4 +9,5 @@
     <color name="white">#FFFFFF</color>
     <color name="Ph_Orange">#FF9800</color>
     <color name="off_Orange">#FFEB3B</color>
+    <color name="off_grey">#2C2C27</color>
 </resources>

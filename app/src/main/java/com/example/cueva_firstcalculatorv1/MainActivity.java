@@ -1,7 +1,7 @@
 package com.example.cueva_firstcalculatorv1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import org.mariuszgromada.math.mxparser.*;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.View;
@@ -119,6 +119,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equalBTN (View view){
+        String userExp = display.getText().toString();
+
+        userExp = userExp.replaceAll("÷", "/");
+        userExp = userExp.replaceAll("×","*");
+
+        Expression exp = new Expression(userExp);
+
+        String result = String.valueOf(exp.calculate());
+
+        display.setText(result);
+        display.setSelection(result.length());
 
     }
 
@@ -140,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         int closedPar = 0;
         int textLen = display.getText().length();
 
-        for (int i = 0; i < closedPar; i++){
+        for (int i = 0; i < cursorPos; i++){
             if (display.getText().toString().substring(i, i+1).equals("(")){
                 openPar += 1;
             }
@@ -151,10 +162,9 @@ public class MainActivity extends AppCompatActivity {
         if (openPar == closedPar || display.getText().toString().substring(textLen-1, textLen).equals("(")){
             updateText("(");
         }
-        if (closedPar < openPar && !display.getText().toString().substring(textLen-1, textLen).equals(")")){
+        else if (closedPar < openPar && !display.getText().toString().substring(textLen-1, textLen).equals("(")){
             updateText(")");
         }
         display.setSelection(cursorPos + 1);
-
     }
 }
