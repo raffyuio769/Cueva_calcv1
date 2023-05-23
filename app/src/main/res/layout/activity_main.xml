@@ -297,7 +297,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:backgroundTint="@color/cobaltblue"
+                android:backgroundTint="@color/Ph_Orange"
                 android:onClick="equalBTN"
                 android:text="@string/equals"
                 android:textColor="@color/white"
