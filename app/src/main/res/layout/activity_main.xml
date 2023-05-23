@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/off_grey">
+    android:background="@color/white">
 
 
     <TableLayout
@@ -28,10 +28,10 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:backgroundTint="@color/Ph_Orange"
+                android:backgroundTint="@color/cobaltblue"
                 android:onClick="clearBTN"
                 android:text="@string/clear"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -297,10 +297,10 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:backgroundTint="@color/off_Orange"
+                android:backgroundTint="@color/cobaltblue"
                 android:onClick="equalBTN"
                 android:text="@string/equals"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
         </TableRow>
     </TableLayout>
