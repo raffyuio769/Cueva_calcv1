@@ -318,6 +318,7 @@
         android:inputType="none"
         tools:ignore="LabelFor"
         android:textAlignment="textEnd"
+        android:textColor="@color/black"
         android:textSize="30sp"/>
 
     <ImageButton
